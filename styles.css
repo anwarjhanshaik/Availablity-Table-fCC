@@ -1,0 +1,124 @@
+:root {
+  --color0: white;
+  --color1: #ebe6ff;
+  --color2:#c2b3ff;
+  --color3: #9980ff;
+  --color4:  #704dff;
+  --color5: #1a0080;
+  --solid-border: 2px solid black;
+  --dashed-border: 2px dashed black;
+  --font-weight: 550;
+  --font-size: clamp(0.4rem, 0.4rem + 1vw, 3rem);
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+thead th:not(.empty) {
+  border-bottom: var(--solid-border);
+}
+th, td{
+  width: 15vw;
+  height: 2vh;
+}
+tbody th {
+  position: relative;
+  top: -0.3rem;
+}
+/*Colors for each td element*/
+.available-0 {
+  background-color: var(--color0);
+  }
+.available-1 {
+  background-color: var(--color1);
+  }
+.available-2 {
+  background-color: var(--color2);
+  }
+.available-3 {
+  background-color: var(--color3);
+  }
+.available-4 {
+  background-color: var(--color4);
+  }
+.available-5 {
+  background-color: var(--color5);
+  }
+/*border-bottom for td elements*/
+.sharp td{
+  border-bottom: var(--solid-border);
+  border-right: var(--solid-border);
+  border-left: var(--solid-border);
+
+}
+.half td {
+  border-bottom: var(--dashed-border);
+  border-right: var(--solid-border);
+  border-left: var(--solid-border);
+}
+#legend {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#legend #availability {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: var(--font-weight);
+}
+.gradient-container {
+  display: flex;
+}
+
+#legend-gradient {
+  border: var(--solid-border);
+  width: 16vw;
+  height: 2vh;
+  background-image: linear-gradient(
+    to right,
+    var(--color0) 0%,
+    var(--color0) 17%,
+    var(--color1) 17%,
+    var(--color1) 34%,
+    var(--color2) 34%,
+    var(--color2) 51%,
+    var(--color3) 51%,
+    var(--color3) 68%,
+    var(--color4) 68%,
+    var(--color4) 85%,
+    var(--color5) 85%,
+    var(--color5) 100%
+  )
+  ;
+  margin: 0 1rem;
+}
+/*table colors representation numbers*/
+.not-available {
+  font-weight: var(--font-weight);
+  margin-top: 0.4rem;
+}
+.available {
+  font-weight: var(--font-weight);
+  margin-top: 0.4rem;
+}
+th, td, .available, .not-available, #availability  {
+    font-size: var(--font-size);
